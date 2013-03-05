@@ -11,10 +11,10 @@ module Jext
     options = OpenStruct.new
     yield(options)
 
-    options[:url] ||= 'http://jext.herokuapp.com'
+    options.url ||= 'http://jext.herokuapp.com'
 
     @api = Her::API.new
-    @api.setup :url => options[:url] do |connection|
+    @api.setup :url => options.url do |connection|
       # Request Middleware
       connection.use Faraday::Request::UrlEncoded
 
