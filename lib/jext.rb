@@ -1,6 +1,8 @@
 require 'her'
 require 'jext/version'
+require 'faraday_middleware'
 require 'jext/middleware/parse'
+require 'jext/middleware/json'
 
 module Jext
   def self.api
@@ -17,6 +19,7 @@ module Jext
     @api.setup :url => options.url do |connection|
       # Request Middleware
       connection.use Faraday::Request::UrlEncoded
+      connection.use Jext::Middleware::JSON
 
       # Response Middleware
       connection.use Jext::Middleware::Parse
