@@ -1,6 +1,5 @@
 module Jext
   class Extension
-    include Model
     include Her::Model
     uses_api Jext.api
 
