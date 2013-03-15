@@ -12,7 +12,8 @@ module Jext
     #
 
     def support_update_engine?(engines=[])
-      return (engines & supported_update_engines).empty?
+      engines = [engines] if engines.is_a?(String)
+      return !(engines & supported_update_engines).empty?
     end
 
     def parent?
