@@ -1,6 +1,7 @@
 require 'her'
 require 'jext/version'
 require 'faraday_middleware'
+require 'ostruct'
 require 'jext/middleware/parse'
 require 'jext/middleware/json'
 
