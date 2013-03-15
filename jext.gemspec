@@ -18,5 +18,6 @@ Gem::Specification.new do |gem|
   gem.require_paths = ['lib']
 
   gem.add_runtime_dependency 'her'
+  gem.add_runtime_dependency 'faraday_middleware'
   gem.add_development_dependency 'rake'
 end
