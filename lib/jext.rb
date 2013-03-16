@@ -1,7 +1,8 @@
 require 'her'
 require 'jext/version'
+require 'jext/error'
 require 'faraday_middleware'
-require 'ostruct'
+require 'jext/middleware/raise_error'
 require 'jext/middleware/parse'
 require 'jext/middleware/json'
 
@@ -24,6 +25,7 @@ module Jext
 
       # Response Middleware
       connection.use Jext::Middleware::Parse
+      connection.use Jext::Middleware::RaiseError
       connection.use Faraday::Adapter::NetHttp
     end
   end
