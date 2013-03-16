@@ -15,7 +15,6 @@ module Jext
       }
 
       def on_complete(response)
-        puts response.inspect
         key = response[:status].to_i
         raise ERROR_MAP[key].new(response) if ERROR_MAP.has_key? key
       end
